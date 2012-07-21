@@ -1,0 +1,10 @@
+{
+
+  "dev": {
+    "driver": "pg",
+    "user": "postgres",
+    "password": "melia",
+    "host": "localhost",
+    "database": "aus"
+  }
+}

@@ -1,0 +1,42 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="/"><%= content.title %></a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="active"><a href="/"><%= content.nav.home %></a></li>
+          <li><a href="/about"><%= content.nav.about %></a></li>
+          <li><a href="/topics"><%= content.nav.contact %></a></li>
+        </ul>
+
+<a class="btn btn-success pull-right" href="/cart"><i class="icon-shopping-cart icon-white"></i> <%= session.itemcount %> </a>
+        <ul class="nav pull-right">
+        <li>
+        <form class="navbar-search pull-right">
+          <input type="text" class="search-query" placeholder="<%=content.nav.searchProducts %>">
+        </form>  
+        </li>
+        <li class="active"><a href="/EN">English</a></li>
+        <li><a href="/CN">中文</a></li>
+      </ul>
+
+      <ul class="nav nav-pills pull-right">
+        <li class="active">
+          <a href="#">English2</a>
+        </li>  
+        <li><a href="#">中文2</a></li> 
+      </ul>  
+
+      </div>
+
+    </div>
+  </div>
+</div>
