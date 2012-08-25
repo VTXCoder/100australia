@@ -1,4 +1,5 @@
 var express = require('express');
+var database_json = require('./database');
 
 var app = express.createServer();
 
@@ -17,7 +18,14 @@ exports.init = function(port) {
         app.use(app.router);
         app.enable("jsonp callback");
 
-        // Could also check for migrations here
+        // Initialise the database connection
+        var env=app.settings.env; if (env==="development") env="dev";
+        var db=database_json[env];
+        global.conString="tcp://"+db.user+":"+db.password+"@"+db.host+"/"+db.database;
+        
+
+        console.log("Connection String: "+global.conString);
+
 
     });
 

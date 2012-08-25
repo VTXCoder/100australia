@@ -1,0 +1,14 @@
+
+		<% for (var i=0;i<20;i++) { 
+			 if(i ==0 || i % 3 ==0 ) { %>
+				<div class="row" style="margin-left:10px;">
+					<% for (var ii=i; ii<i+3; ii++) { %>
+					<div class="span4">
+						<% if (ii < 20) { %> 
+							<%= ii+1 %>
+						<% } %>
+					</div>
+					<% } %>
+				</div>
+			<% }
+		} %>

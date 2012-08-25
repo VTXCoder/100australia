@@ -1,4 +1,53 @@
  body {
-    padding-top: 60px;
     padding-bottom: 40px;
+  }
+
+
+.navbar-inner {
+	border-radius: 0;
+	webkit-border-radius: 0;
+	moz-border-radius: 0;
+}
+
+
+  .logo{
+  	padding-top: 15px;
+  	padding-left:10px;
+  	padding-bottom: 5px;
+  }
+
+  .logo100, .logoaus{
+    font-family: Century Gothic; 
+  	font-size: 23px; 
+  	letter-spacing: 2px;
+  	font-weight:lighter;
+  	font-style: normal;	
+  }
+
+  .logo100{
+  	color: #000000;
+  }
+  .logoaus{ 
+  	color: #049cdb;
+  }
+
+  .langauge{
+  	vertical-align: top; 
+  }
+
+  .langauge span{
+  	font-size: 10pt;
+  	color: #777777;
+  }
+
+  #btn_product_search{
+  	margin-top:-2px;
+  }
+
+  #btn_shopping_bag{
+  	margin-top:-1px;
+  }
+
+  #product_list{
+  	background-color: #ffffff;
   }

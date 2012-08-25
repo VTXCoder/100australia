@@ -10,7 +10,7 @@ var geoip = require('geoip-lite');
 
 exports.initialise=function(req,res) {
 
-	var currentVersion=2;
+	var currentVersion=5;
 	if (!req.session.version || req.session.version < currentVersion) {
 		console.log("Initialising Session");
 
@@ -20,10 +20,12 @@ exports.initialise=function(req,res) {
     if (req.cookies.language) {
       var cookies = {language:req.cookies.language};
     } else {
-      var cookies = {language:"EN"};
+      var cookies = {language:"en"};
     }
 
-    req.session.langauge=cookies.language;
+    req.session.language=cookies.language;
+
+    console.log(req.session.language);
 
     req.session.itemcount=0;
 
@@ -32,7 +34,7 @@ exports.initialise=function(req,res) {
 	}
 
   // Set the country cookie
-  res.cookie('language',req.session.langauge,{ maxAge: 7776000000 });
+  res.cookie('language',req.session.language,{ maxAge: 7776000000 });
 
   
 

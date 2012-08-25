@@ -1,17 +1,15 @@
-var content = require('./content').getContent();
+var content = require('./content');
 var shopping = require('./shopping').getShopping();
 
+
 exports.RenderHome=function(req,res) {
-	var c={content:content,session:req.session};
+	var c={page:'home',content:content.getContent(req.session.language),session:req.session};	
     res.render('page/home.ejs', c);
 }
 
-exports.RenderAbout=function(req,res) {
-	var c={content:content,session:req.session};
-    res.render('page/about.ejs', c);
+
+exports.RenderProductList=function(page,req,res) {
+	var c={page:page,content:content.getContent(req.session.language),session:req.session};
+    res.render('page/products.ejs', c);
 } 
 
-exports.RenderProductList=function(req,res) {
-	var c={content:content,session:req.session};
-    res.render('page/productlist.ejs', c);
-} 

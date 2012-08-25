@@ -1,4 +1,25 @@
-<div class="navbar navbar-fixed-top">
+
+<div class="container">
+  <div class="row">
+    <div class="span10">
+      <div class="logo">
+      <span class="logo100">100</span> <span class="logoaus">AUSTRALIA</span>
+      </div>
+    </div>
+    <div class="span2">
+      <div class="">
+      <div class="btn-group"> 
+        <a class="btn btn-info btn-mini <%- (session.language==='en'?'disabled':'')%>" href="/en">English</a> 
+        <a class="btn btn-info btn-mini <%- (session.language==='cn'?'disabled':'')%>" href="/zh-cn">简体中文</a>  
+        <a class="btn btn-info btn-mini <%- (session.language==='tw'?'disabled':'')%>" href="/zh-tw">繁體中文</a> 
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="navbar">
   <div class="navbar-inner">
     <div class="container">
 
@@ -6,37 +27,33 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </a>
-
-      <a class="brand" href="/"><%= content.title %></a>
+      </a>      
 
       <div class="nav-collapse">
         <ul class="nav">
-          <li class="active"><a href="/"><%= content.nav.home %></a></li>
-          <li><a href="/about"><%= content.nav.about %></a></li>
-          <li><a href="/topics"><%= content.nav.contact %></a></li>
+          <li <%- (page==='home'?'class="active"':'')%> ><a href="/"><%= content.nav.home %></a></li>
+          <li <%- (page==='new'?'class="active"':'')%> ><a href="/new"><%= content.nav.new_products %></a></li>
+          <li <%- (page==='topsellers'?'class="active"':'')%> ><a href="/topsellers"><%= content.nav.top_sellers %></a></li>
+          <li <%- (page==='sale'?'class="active"':'')%> ><a href="/sale"><%= content.nav.sale %></a></li>
+                               
         </ul>
 
-<a class="btn btn-success pull-right" href="/cart"><i class="icon-shopping-cart icon-white"></i> <%= session.itemcount %> </a>
         <ul class="nav pull-right">
-        <li>
-        <form class="navbar-search pull-right">
-          <input type="text" class="search-query" placeholder="<%=content.nav.searchProducts %>">
-        </form>  
-        </li>
-        <li class="active"><a href="/EN">English</a></li>
-        <li><a href="/CN">中文</a></li>
-      </ul>
-
-      <ul class="nav nav-pills pull-right">
-        <li class="active">
-          <a href="#">English2</a>
-        </li>  
-        <li><a href="#">中文2</a></li> 
-      </ul>  
+          <li>
+          <form class="navbar-search">
+            <input type="text" class="search-query" placeholder="<%=content.nav.searchProducts %>">
+          </form> 
+          </li>            
+          <li class="divider-vertical"></li>
+          <li>
+            <a href=""><i class="icon-shopping-cart icon-white"></i> <%= session.itemcount %> </a>
+          </li>  
+        </ul>          
 
       </div>
 
     </div>
   </div>
+</div>
+
 </div>

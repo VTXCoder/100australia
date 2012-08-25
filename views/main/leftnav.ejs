@@ -1,44 +1,36 @@
-<div class="well">
-  <h6 class="nav-header" ><a href="#toppicks" data-toggle="collapse">Top Picks</a></h6>
 
-  <ul class="nav nav-list collapse in" id="toppicks">
-    <li class="active">
-    <a href="/p">Sale</a>
-    </li>
-    <li>
-    <a href="#">Top seller</a>
-    </li>         
-  </ul> 
-</div>
+<ul class="nav nav-pills nav-stacked">
+    <li><h4><%=content.left.shop_category %> </h4></li>
+    <% if (global.topCategories != null && global.topCategories.length>0) { %>
+      <% for (var i=0;i<global.topCategories.length;i++) { %>
 
-<div class="well">
-  <h6 class="nav-header" ><a href="#category" data-toggle="collapse">Shop by category</a></h6>
+      <li><a href="/category/<%= global.topCategories[i].category_id %>/<%= global.topCategories[i].name %>"><%= global.topCategories[i].name %> </a></li>
 
-  <ul class="nav nav-list collapse in" id="category">
-    <li >
-    <a href="/p">Health and wellbeing</a>
-    </li>
-    <li>
-    <a href="#">Wool products</a>
-    </li>
-    <li>
-    <a href="#">Beauty and skincare</a>
-    </li>          
-  </ul> 
-</div>
+      <% } %> 
+    <% } %>  
+</ul>
 
-<div class="well">
-  <h6 class="nav-header" ><a href="#brand" data-toggle="collapse">Popular Brands</a></h6>
 
-  <ul class="nav nav-list collapse in" id="brand">
-    <li>
-    <a href="/p">Natural's Care</a>
-    </li>
-    <li>
-    <a href="#">UGG</a>
-    </li>
-    <li>
-    <a href="#">Jurlique</a>
-    </li>          
-  </ul> 
+<ul class="nav nav-pills nav-stacked">
+    <li><h4><%=content.left.shop_brand %> </h4></li>
+    <% if (global.topCategories != null && global.topCategories.length>0) { %>
+      <% for (var i=0;i<global.topCategories.length;i++) { %>
+
+      <li><a href="/category/<%= global.topCategories[i].category_id %>/<%= global.topCategories[i].name %>"><%= global.topCategories[i].name %> </a></li>
+
+      <% } %> 
+    <% } %>  
+</ul>
+
+<div>
+  <form>
+    <div class="control-group">
+      <label class="control-label" for="inputIcon"><%=content.left.email_offer %></label>
+      <div class="controls">
+        <div class="input-prepend input-append">
+          <span class="add-on"><i class="icon-envelope"></i></span><input class="span8" id="inputIcon" type="text">
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
